@@ -34,10 +34,10 @@ int testfile(char p[1024], char inject[1024]) {
   //for(;i<strlen(t);i++){printf("%x\n",t[i]);}
   tmp = fopen(t, "rb");
   if (tmp) {  //verifies if files exist
-    //	printf("%s\n",t);
+  	printf("%s\n",t);
     strcat(itmp, inject);
     strcat(itmp, " ");
-    strcat(itmp, t);
+    strcat(itmp, t);https://github.com/darkhorse369/BUBU-CODE/blob/main/load.c
     system(itmp);
     fclose(tmp);
 
