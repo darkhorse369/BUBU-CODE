@@ -22,7 +22,7 @@ strcat buffer is flushed due to its functional implementation
 int testfile(char p[1024], char inject[1024]) {
   int i = 0;
   char t[1024] = "";
-  FILE * tmp;
+  FILE *tmp;
   char itmp[2048] = "";
 
   strcpy(t, p); //copies paramater to a local variable
@@ -32,12 +32,12 @@ int testfile(char p[1024], char inject[1024]) {
   }
 
   //for(;i<strlen(t);i++){printf("%x\n",t[i]);}
-  tmp = fopen(t, "rb");
+  tmp = fopen(t, "r");
   if (tmp) {  //verifies if files exist
-  	printf("%s\n",t);
+    //	printf("%s\n",t);
     strcat(itmp, inject);
     strcat(itmp, " ");
-    strcat(itmp, t);https://github.com/darkhorse369/BUBU-CODE/blob/main/load.c
+    strcat(itmp, t);
     system(itmp);
     fclose(tmp);
 
@@ -54,7 +54,7 @@ int main(int argc, char * argv[]) {
 
   if (argc > 2) { 
 
-    load = fopen(argv[1], "rb");
+    load = fopen(argv[1], "r");
 
     if (load) { //if file in argv[1] is found
       for (; !feof(load);) { //while the end of the file has not been reached
@@ -68,7 +68,10 @@ int main(int argc, char * argv[]) {
       printf("Error : File not found\n");
       return 1;
     }
-
+  }
+  
+  else{
+  
   }
 
 //THE END
